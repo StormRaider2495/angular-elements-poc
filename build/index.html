@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>AngularCustomElements</title>
+  <base href="./">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <script src="./combined-component.js"></script>
+</head>
+<body>
+  <app-button label="Button Web Component"></app-button>
+
+  <app-display-component countNumber="0"></app-display-component>
+    <script>
+        const button = document.querySelector('app-button');
+        const display = document.querySelector('app-display-component');
+        button.addEventListener('action', (event) => {
+          console.log(`Action created: ${event.detail}`);
+          display.countNumber = event.detail;
+        });
+       </script>
+  </body>
+</html>

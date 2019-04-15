@@ -15,12 +15,12 @@ import { DisplayComponentComponent } from './display-component/display-component
         BrowserModule
     ],
     exports: [
-        ButtonComponent
-        // DisplayComponentComponent
+        ButtonComponent,
+        DisplayComponentComponent
     ],
     entryComponents: [
-        ButtonComponent
-        // DisplayComponentComponent
+        ButtonComponent,
+        DisplayComponentComponent
     ],
     providers: []
 })
@@ -30,8 +30,8 @@ export class AppModule {
     ngDoBootstrap() {
         const customButtonElement = createCustomElement(ButtonComponent, {injector: this.injector});
         customElements.define('app-button', customButtonElement);
-        // const customDisplayElement = createCustomElement(DisplayComponentComponent, { injector: this.injector });
-        // customElements.define('app-display-component', customDisplayElement);
+        const customDisplayElement = createCustomElement(DisplayComponentComponent, { injector: this.injector });
+        customElements.define('app-display-component', customDisplayElement);
     }
 }
 
