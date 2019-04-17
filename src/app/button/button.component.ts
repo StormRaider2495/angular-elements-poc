@@ -31,6 +31,7 @@ export class ButtonComponent implements OnChanges, AfterViewInit {
 
     handleClick(event) {
         this.numberOfClicks++;
+        console.log('Number of clicks: ' + this.numberOfClicks);
         this.action.emit(this.numberOfClicks);
         this._commonFactoryService.updateClickCount(this.numberOfClicks);
     }

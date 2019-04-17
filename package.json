@@ -5,8 +5,8 @@
     "ng": "ng",
     "start": "ng serve --port 8080",
     "build": "ng build --prod --output-hashing=none",
-    "build:webElem": "ng build --prod --extraWebpackConfig webpack.extra.js --output-hashing=none",
-    "package": "jscat ./dist/angular-custom-elements/runtime.js ./dist/angular-custom-elements/scripts.js ./dist/angular-custom-elements/main.js > custom-button-element.js",
+    "build:webElem": "ng build --prod --extraWebpackConfig webpack.extra.js --output-hashing=none --single-bundle true",
+    "package": "jscat ./dist/angular-custom-elements/runtime.js ./dist/angular-custom-elements/scripts.js ./dist/angular-custom-elements/main.js > ./dist/angular-custom-elements/custom-button-element.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

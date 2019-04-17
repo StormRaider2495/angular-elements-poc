@@ -31,6 +31,7 @@ export class DisplayComponentComponent implements OnInit, AfterViewInit {
   }
 
   updatecountNumber(data: number): void {
+    console.log('display component data: ' + data);
     if (data) {
       this.countNumber = data;
     }

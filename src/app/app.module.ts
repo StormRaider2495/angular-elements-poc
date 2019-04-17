@@ -19,7 +19,7 @@ import { DisplayComponentComponent } from './display-component/display-component
         DisplayComponentComponent
     ],
     entryComponents: [
-        ButtonComponent,
+        // ButtonComponent
         DisplayComponentComponent
     ],
     providers: []
@@ -28,10 +28,14 @@ export class AppModule {
     constructor(private injector: Injector) { }
 
     ngDoBootstrap() {
-        const customButtonElement = createCustomElement(ButtonComponent, {injector: this.injector});
-        customElements.define('app-button', customButtonElement);
+      const elementName = 'app-display-component';
+      if (!customElements.get(elementName)) {
+        console.log('bootstraping display');
+        // const customButtonElement = createCustomElement(ButtonComponent, {injector: this.injector});
+        // customElements.define('app-button', customButtonElement);
         const customDisplayElement = createCustomElement(DisplayComponentComponent, { injector: this.injector });
         customElements.define('app-display-component', customDisplayElement);
+      }
     }
 }
 
